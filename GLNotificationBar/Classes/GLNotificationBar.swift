@@ -286,7 +286,7 @@ open class GLNotificationBar: NSObject {
         if infoDic["CFBundleIcons"] != nil {
             infoDic = infoDic["CFBundleIcons"] as! Dictionary
             infoDic = infoDic["CFBundlePrimaryIcon"] as! Dictionary
-            appIconName = (infoDic["CFBundleIconFiles"]! as AnyObject).object(at: 0) as! String
+            appIconName = (infoDic["CFBundleIconFiles"]! as AnyObject).object(at: 0) as? String
             notificationBar.appIcon.image = UIImage(named: appIconName)
             
         } else {
